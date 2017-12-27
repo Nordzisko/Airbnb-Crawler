@@ -1,0 +1,142 @@
+PUT /airbnb_index/_mapping/room
+{
+  "properties": {
+    "amenities": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "suggest": {
+          "type": "completion"
+        }
+      }
+    },
+    "amenities_count": {
+      "type": "long"
+    },
+    "bedrooms": {
+      "type": "float"
+    },
+    "beds": {
+      "type": "float"
+    },
+    "city": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "suggest": {
+          "type": "completion"
+        }
+      }
+    },
+    "country": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "suggest": {
+          "type": "completion"
+        }
+      }
+    },
+    "desc_en": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      },
+      "analyzer": "english"
+    },
+    "desc_lang": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      }
+    },
+    "desc_other": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      },
+      "analyzer": "other_analyzer"
+    },
+    "guests": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "host_id": {
+      "type": "text"
+    },
+    "host_name": {
+      "type": "text"
+    },
+    "house_rules": {
+      "type": "text",
+      "analyzer": "english"
+    },
+    "is_superhost": {
+      "type": "boolean"
+    },
+    "listing_id": {
+      "type": "text"
+    },
+    "location": {
+      "type": "geo_point"
+    },
+    "location_name": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "price": {
+      "type": "float"
+    },
+    "rating": {
+      "type": "float"
+    },
+    "reviews": {
+      "type": "text",
+      "analyzer": "english"
+    },
+    "reviews_count": {
+      "type": "long"
+    },
+    "room_type": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "suggest": {
+          "type": "completion"
+        }
+      }
+    },
+    "title": {
+      "type": "text",
+      "analyzer": "english"
+    }
+  }
+}
